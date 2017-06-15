@@ -18,15 +18,10 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	<!-- 配置包扫描器，扫描@Controller注解的类 -->
-	<context:component-scan base-package="g.controller"/>
-	<!-- 配置资源映射 -->
-	<mvc:resources location="/css/" mapping="/css/**"/>
-	<mvc:resources location="/js/" mapping="/js/**"/>
+	<context:component-scan base-package="g.portal.controller"/>
 	<!-- 引用dubbo服务 -->
-	<dubbo:application name="taotao-manager-web"/>
+	<dubbo:application name="taotao-portal-web"/>
 	<dubbo:registry protocol="zookeeper" address="106.14.149.247:2181"/>
-	<dubbo:reference interface="g.service.ItemService" id="itemService" />
-	<dubbo:reference interface="g.service.ItemCatService" id="itemCatService" />
-	<dubbo:reference interface="g.content.service.ContentService" id="contentService" />
-	<dubbo:reference interface="g.content.service.ContentCategoryService" id="contentCategoryService" />
+	<!-- <dubbo:reference interface="g.service.ItemService" id="itemService" />
+	<dubbo:reference interface="g.service.ItemCatService" id="itemCatService" /> -->
 </beans>      
