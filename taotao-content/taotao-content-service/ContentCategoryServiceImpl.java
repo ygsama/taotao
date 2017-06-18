@@ -29,12 +29,12 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	@Override
 	public List<EasyUITreeNode> getContentCategoryList(long parentId) {
 		//根据parentId查询子节点列表
-		TbContentCategoryQuery Query = new TbContentCategoryQuery();
+		TbContentCategoryQuery query = new TbContentCategoryQuery();
 		//设置查询条件
-		Criteria criteria = Query.createCriteria();
+		Criteria criteria = query.createCriteria();
 		criteria.andParentIdEqualTo(parentId);
 		//执行查询
-		List<TbContentCategory> list = contentCategoryDao.selectByExample(Query);
+		List<TbContentCategory> list = contentCategoryDao.selectByExample(query);
 		List<EasyUITreeNode> resultList = new ArrayList<>();
 		for (TbContentCategory tbContentCategory : list) {
 			EasyUITreeNode node = new EasyUITreeNode();
@@ -71,6 +71,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 			//更新父节点
 			contentCategoryDao.updateByPrimaryKey(parent);
 		}
+			
 		//返回结果
 		return TaotaoResult.ok(contentCategory);
 	}
