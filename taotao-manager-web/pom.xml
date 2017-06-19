@@ -26,6 +26,11 @@
     	<artifactId>taotao-content-interface</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>g</groupId>
+    	<artifactId>taotao-search-interface</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   
   <!-- Spring -->
 	<dependency>
@@ -108,5 +113,6 @@
 			</configuration>
   		</plugin>
   	</plugins>
+  	
   </build>
 </project>
