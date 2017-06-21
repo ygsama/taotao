@@ -19,11 +19,15 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<!-- 配置全局异常处理器 -->
+	<bean class="com.taotao.search.exception.GlobalExceptionResolver"></bean>
+	
 	<!-- 配置包扫描器，扫描@Controller注解的类 -->
 	<context:component-scan base-package="g.search.controller"/>
 	
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="taotao-search-web"/>
 	<dubbo:registry protocol="zookeeper" address="106.14.149.247:2181"/>	
-	<!-- <dubbo:reference interface="g.content.service.ContentService" id="contentService" /> -->
+	<dubbo:reference interface="g.search.service.SearchService" id="searchService" />
 </beans>      
