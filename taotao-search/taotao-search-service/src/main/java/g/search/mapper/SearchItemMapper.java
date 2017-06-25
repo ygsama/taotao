@@ -7,4 +7,6 @@ import g.common.pojo.SearchItem;
 public interface SearchItemMapper {
 
 	List<SearchItem> getItemList();
+
+	SearchItem getItemById(long itemId);
 }
